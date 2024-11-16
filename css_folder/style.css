@@ -9,10 +9,14 @@ html {
     box-sizing: border-box;
 }
 
+p {
+    margin: 1px;
+}
+
 .animated-gif {
     background-color: yellow;
-    height: 100px;
-    width: 135px;
+    height: 300px;
+    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +30,10 @@ h1 {
 body {
     background-color: black;
     color: green;
-    font-size: 8px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main {
@@ -38,7 +45,98 @@ main {
 
 button {
     border-radius: 50%;
-    height: 35px;
-    width: 35px;
-    font-size: 5px;
+    height: 80px;
+    width: 80px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.stats {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.stats-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.stats-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.stats span {
+    margin: 0 10px;
+}
+
+/* .inventory {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+*/
+.campfire {
+    width: 80%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: yellow;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.inventory-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.inventory-list {
+    display: none;
+    position: absoulte;
+    background-color: black;
+    color: green;
+    border: 1px solid green;
+    padding: 10px;
+    z-index: 1;
+}
+
+.inventory-dropdown:hover .inventory-list {
+    display: block;
+}
+
+.inventory-button {
+    background-color: black;
+    color: green;
+    border: 1px solid green;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 25%;
+    height: 30px;
+    width: 60px;
 }

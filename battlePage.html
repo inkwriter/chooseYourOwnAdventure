@@ -8,9 +8,35 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
   <body>
-    <main>
-    
-    </main>
+    <div class="game-screen">
+      <div class="stats">
+        <div class="stats-left">
+          <p>XP: <span id="xp">0/100</span></p>
+          <p>HP: <span id="hp">100</span></p>
+        </div>
+        <div class="stats-left">
+          <p>Gold: <span class="gold">0</span></p>
+          <div class="inventory-dropdown">
+            <button class="inventory-button">INV</button>
+            <div class="inventory-list">
+              <p class="item">HP Potions <span id="healthPotions">0</span></p>
+              <p class="item">Poison <span id="poison">0</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="campfire">
+        This is a placeholder
+      </div>
+      <div class="buttons">
+        <a href="battlePage.html">
+          <button id="trainBtn">TRAIN</button>
+        </a>
+        <a href="shop.html">
+          <button id="shopBtn">SHOP</button>
+        </a>
+      </div>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
