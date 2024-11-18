@@ -15,12 +15,16 @@
           This is an animated gif.
         </div>
         <div class="input-section">
-          <label for="name">What is your name?</label>
-          <input type="text" id="name" name="name">
-          <button class="journey-button">Journey On!</button>
+          <form id="nameForm">
+            <label for="name">What is your name?</label>
+            <input type="text" id="name" name="name">
+            <button type="submit" class="journey-button, introButton">Journey On!</button>
+          </form>
         </div>
-        <button>Start</button>
+        <a href="choiceScreen.html">
+          <button class="introButton hidden" id="startButton">Start</button>
+        </a>
     </main>
-    <script src="index.js"></script>
+    <script src="js_folder/index.js"></script>
   </body>
 </html>
