@@ -23,14 +23,9 @@ p {
     margin-bottom: 20px;
 }
 
-h1 {
-    color: green;
-}
-
-
 body {
     background-color: black;
-    color: green;
+    color: #72BF78;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -124,8 +119,8 @@ button {
     display: none;
     position: absolute;
     background-color: black;
-    color: green;
-    border: 1px solid green;
+    color: #72BF78;
+    border: 1px solid #72BF78;
     padding: 10px;
     z-index: 1;
 }
@@ -136,8 +131,8 @@ button {
 
 .inventory-button {
     background-color: black;
-    color: green;
-    border: 1px solid green;
+    color: #72BF78;
+    border: 1px solid #72BF78;
     padding: 5px;
     cursor: pointer;
     border-radius: 25%;
