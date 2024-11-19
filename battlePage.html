@@ -11,10 +11,12 @@
     <div class="game-screen">
       <div class="stats">
         <div class="stats-left">
+          <span id="playerName"></span>
           <p>XP: <span id="xp">0/100</span></p>
           <p>HP: <span id="hp">100</span></p>
         </div>
         <div class="stats-left">
+          <p>lvl <span id="level">1</span></p>
           <p>Gold: <span id="gold">0</span></p>
           <div class="inventory-dropdown">
             <button class="inventory-button">INV</button>
@@ -25,7 +27,7 @@
           </div>
         </div>
       </div>
-      <div class="campfire">
+      <div id="animated-gif">
         This is a placeholder
       </div>
       <div class="buttons">
@@ -34,6 +36,8 @@
           <button id="runAway">Run Away</button>
       </div>
     </div>
-    <script src="js_folder/index.js"></script>
+    <script type="module" src="js_folder/gameData.js"></script>
+    <script type="module" src="js_folder/index.js"></script>
+    <script type="module" src="js_folder/gamePage.js"></script>
   </body>
 </html>

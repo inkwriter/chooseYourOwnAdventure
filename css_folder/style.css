@@ -13,7 +13,7 @@ p {
     margin: 1px;
 }
 
-.animated-gif {
+.intro-animated-gif {
     background-color: yellow;
     height: 300px;
     width: 300px;
@@ -103,16 +103,7 @@ button {
     margin: 0 10px;
 }
 
-/* .inventory {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    padding-right: 10px;
-    margin-bottom: 20px;
-}
-*/
-.campfire {
+#animated-gif {
     width: 80%;
     height: 500px;
     display: flex;
@@ -155,9 +146,15 @@ button {
 }
 
 .introButton {
-    border-radius: 50%;
-    height: 60px;
+    border-radius: 25%;
+    height: 50px;
     width: 60px;
+}
+
+#choiceBtn {
+    border-radius: 25%;
+    height: 50px;
+    width: 80px;
 }
 
 .hidden {

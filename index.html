@@ -11,7 +11,7 @@
     <main>
         <h1>Game Title</h1>
         <p>This is a description of what the player will see.</p>
-        <div class="animated-gif">
+        <div class="intro-animated-gif">
           This is an animated gif.
         </div>
         <div class="input-section">
@@ -21,10 +21,12 @@
             <button type="submit" class="journey-button, introButton">Journey On!</button>
           </form>
         </div>
+        <p id="introMessage" class="hidden">Welcome, <span id="playerName">Test</span>!</p>
         <a href="choiceScreen.html">
-          <button class="introButton hidden" id="startButton">Start</button>
+          <button class="introButton hidden" id="choiceBtn">Customize</button>
         </a>
     </main>
-    <script src="js_folder/index.js"></script>
+    <script type="module" src="js_folder/gameData.js"></script>
+    <script type="module" src="js_folder/index.js"></script>
   </body>
 </html>
