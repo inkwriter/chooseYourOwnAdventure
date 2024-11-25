@@ -4,10 +4,18 @@ export const gameState = {
     hp: 100,
     xp: 0,
     gold: 30,
+    stats: {
+        attack: 1,
+        defense: 1,
+        speed: 1
+    },
     inventory: {
         potions: 0,
         poison: 0
     },
+    calculateAC() {
+        return 10 + this.state.defense + this.stats.speed;
+    }
 };
 
 export function setPlayerName(name) {

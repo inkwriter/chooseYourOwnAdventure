@@ -15,6 +15,7 @@ function handleBuyItem(item) {
         gameState.gold -= item.price;
         item.addToInventory();
         savePlayerData();
+        console.log("GameState after saving in shop:", JSON.parse(localStorage.getItem("gameState")));
         updateShopUI();
         console.log(`${item.name}purchased successfully!`);
     } else {
