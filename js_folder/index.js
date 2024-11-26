@@ -12,13 +12,17 @@ if (form) {
 
         const name = document.getElementById('name').value;
 
+        // Checks to make sure you entered a name
         if (!name) {
             alert("Please enter your name.");
             return;
         }
 
+        // Save the player's name in the game state and localStorage 
         setPlayerName(name);
+        console.log("name is set.")
 
+        // Update the UI to show the player's name
         introMessage.classList.remove('hidden');
         playerNameSpan.textContent = name;
         choiceBtn.classList.remove('hidden');

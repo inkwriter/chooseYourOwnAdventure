@@ -17,9 +17,9 @@
           <div class="stats-dropdown">
             <button class="stats-btn">STATS</button>
             <div class="stats-list">
-              <p>Attack: <span id="att">0</span></p>
-              <p>Defense: <span id="def">0</span></p>
-              <p>Speed: <span id="spd">0</span></p>
+              <p>Attack: <span id="att">1</span></p>
+              <p>Defense: <span id="def">1</span></p>
+              <p>Speed: <span id="spd">1</span></p>
             </div>
           </div>
         </div>
@@ -36,14 +36,18 @@
         </div>
       </div>
       <div class="enemyHP">
-        <p>Enemy HP: <span id="enemyHP">0</span></p>
+        <p>Enemy HP: <span id="enemyHP">20</span></p>
       </div>
       <div id="animated-gif">
         <p class="gif-text">This is a placeholder</p>
       </div>
+      <div id="combat-feedback">
+        <p id="playerAttackFeedback"></p>
+        <p id="enemyAttackFeedback"></p>
+      </div>
       <div class="buttons">
-          <button id="attack">Attack</button>
-          <button id="useItem">Use Item</button>
+          <button id="attackBtn">Attack</button>
+          <button id="useItemBtn">Use Item</button>
           <a href="gamePage.html">
             <button id="runAway">Run Away</button>
           </a>

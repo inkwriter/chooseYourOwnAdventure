@@ -2,6 +2,7 @@ import { gameState, loadPlayerData, buyItem, Potion, savePlayerData } from "./ga
 
 loadPlayerData();
 
+// Update the shop UI with player data
 function updateShopUI(){
     document.getElementById('playerName').textContent = gameState.playerName || "Player";
     document.getElementById('gold').textContent = gameState.gold;
@@ -9,7 +10,7 @@ function updateShopUI(){
     document.getElementById('poison').textContent = gameState.inventory.poison;
 }
 
-
+// Handle buying an item
 function handleBuyItem(item) {
     if (gameState.gold >= item.price) {
         gameState.gold -= item.price;
