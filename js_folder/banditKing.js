@@ -1,7 +1,7 @@
 import { gameState, Bandit, attackEnemy, savePlayerData, BanditKing } from "../js_folder/gameData.js";
 
 // Create a copy of the Bandit for this encounter
-let currentEnemy = { ...Bandit };
+let currentEnemy = { ...BanditKing };
 
 // Initialize level-up increments for player stats
 let levelUpIncrements = {

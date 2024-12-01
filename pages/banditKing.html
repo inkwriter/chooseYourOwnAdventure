@@ -17,9 +17,9 @@
           <div class="stats-dropdown">
             <button class="stats-btn">STATS</button>
             <div class="stats-list">
-              <p>Attack: <span id="att">0</span></p>
-              <p>Defense: <span id="def">0</span></p>
-              <p>Speed: <span id="spd">0</span></p>
+              <p>Attack: <span id="att">1</span></p>
+              <p>Defense: <span id="def">1</span></p>
+              <p>Speed: <span id="spd">1</span></p>
             </div>
           </div>
         </div>
@@ -28,7 +28,7 @@
             <div id="weatherMessage">Loading weather...</div>
           </div>
           <p>lvl <span id="level">1</span></p>
-          <p>Gold: <span id="gold">30</span></p>
+          <p>Gold: <span id="gold">0</span></p>
           <div class="inventory-dropdown">
             <button class="inventory-button">INV</button>
             <div class="inventory-list">
@@ -38,28 +38,27 @@
           </div>
         </div>
       </div>
+      <div class="enemyHP">
+        <p>Enemy HP: <span id="enemyHP">20</span></p>
+      </div>
       <div id="animated-gif">
         <p class="gif-text">This is a placeholder</p>
       </div>
-      <div class="shopItems">
-          <div class="item">
-            <p>HP Potion - 10 Gold</p>
-            <button id="buyPotionsBtn">Buy</button>
-          </div>
-          <div class="item">
-            <p>Poison - 20 Gold</p>
-            <button>Buy</button>
-          </div>
+      <div id="combat-feedback-box">
+        <div id="playerAttackFeedback">Player</div>
+        <div id="enemyAttackFeedback"></div>
       </div>
       <div class="buttons">
-        <a href="gamePage.html">
-          <button>BACK TO THE WILD</button>
-        </a>
+          <button id="attackBtn">Attack</button>
+          <button id="useItemBtn">Use Item</button>
+          <a href="gamePage.html">
+            <button id="runAway">Run Away</button>
+          </a>
       </div>
     </div>
     <script type="module" src="../js_folder/gameData.js"></script>
-    <script type="module" src="../js_folder/shop.js"></script>
-    <script type="module" src="../js_folder/global.js"></script>
+    <script type="module" src="../js_folder/banditKing.js"></script>
     <script type="module" src="../js_folder/weather.js"></script>
+    <script type="module" src="../js_folder/global.js"></script>
   </body>
 </html>

@@ -24,6 +24,9 @@
           </div>
         </div>
         <div class="stats-left">
+          <div class="weatherSection">
+            <div id="weatherMessage">Loading weather...</div>
+          </div>
           <p>lvl <span id="level">1</span></p>
           <p>Gold: <span id="gold">0</span></p>
           <div class="inventory-dropdown">
@@ -41,9 +44,9 @@
       <div id="animated-gif">
         <p class="gif-text">This is a placeholder</p>
       </div>
-      <div id="combat-feedback">
-        <p id="playerAttackFeedback"></p>
-        <p id="enemyAttackFeedback"></p>
+      <div id="combat-feedback-box">
+        <div id="playerAttackFeedback">Player</div>
+        <div id="enemyAttackFeedback"></div>
       </div>
       <div class="buttons">
           <button id="attackBtn">Attack</button>
@@ -56,5 +59,6 @@
     <script type="module" src="../js_folder/gameData.js"></script>
     <script type="module" src="../js_folder/combat.js"></script>
     <script type="module" src="../js_folder/global.js"></script>
+    <script type="module" src="../js_folder/weather.js"></script>
   </body>
 </html>
