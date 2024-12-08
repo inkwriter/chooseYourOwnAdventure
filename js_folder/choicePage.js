@@ -1,7 +1,7 @@
 import { gameState, savePlayerData } from "../js_folder/gameData.js";
 
 // Track stat increments for future level-ups
-const levelUpIncrements = {
+export const levelUpIncrements = {
     attack: 0,
     defense: 0,
     speed: 0,
@@ -95,8 +95,6 @@ document.getElementById("doubleSpeed").addEventListener("click", () => doubleSta
 document.getElementById("splitAttackDefense").addEventListener("click", () => splitStat("attack", "defense"));
 document.getElementById("splitAttackSpeed").addEventListener("click", () => splitStat("attack", "speed"));
 document.getElementById("splitDefenseSpeed").addEventListener("click", () => splitStat("defense", "speed"));
-
-document.getElementById("resetStats").addEventListener("click", resetStats);
 
 // Initialize UI
 loadLevelUpIncrements();

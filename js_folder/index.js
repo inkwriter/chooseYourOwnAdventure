@@ -29,3 +29,11 @@ if (form) {
 
     });
 }
+
+function startNewGame() {
+    localStorage.removeItem("gameState");
+    localStorage.removeItem("levelUpIncrements");
+    window.location.href = "game.html"; // or wherever your game starts
+}
+
+document.getElementById("newGameBtn").addEventListener("click", startNewGame);

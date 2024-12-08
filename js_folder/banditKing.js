@@ -1,6 +1,6 @@
-import { gameState, Bandit, attackEnemy, savePlayerData, BanditKing } from "../js_folder/gameData.js";
+import { gameState, BanditKing, attackEnemy, savePlayerData } from "../js_folder/gameData.js";
+import { handleEndGame } from "../js_folder/endPage.js";
 
-// Create a copy of the Bandit for this encounter
 let currentEnemy = { ...BanditKing };
 
 // Initialize level-up increments for player stats
@@ -16,33 +16,6 @@ function loadLevelUpIncrements() {
     if (savedIncrements) {
         Object.assign(levelUpIncrements, savedIncrements);
         console.log("Loaded level-up increments:", levelUpIncrements);
-    }
-}
-
-// Save level-up increments to localStorage
-function saveLevelUpIncrements() {
-    localStorage.setItem("levelUpIncrements", JSON.stringify(levelUpIncrements));
-    console.log("Saved level-up increments:", levelUpIncrements);
-}
-
-// Helper function: Enemy attacks the player
-function enemyAttack() {
-    const enemyAttackFeedback = document.getElementById("enemyAttackFeedback");
-
-    if (currentEnemy.hp > 0) { // Enemy attacks only if it's alive
-        const enemyMessage = currentEnemy.attackPlayer(gameState);
-        enemyAttackFeedback.textContent = enemyMessage;
-
-        // Log the damage dealt by the enemy
-        console.log("Enemy's attack damage:", enemyMessage);
-
-        // Check if player is defeated
-        if (gameState.hp <= 0) {
-            enemyAttackFeedback.textContent += " You have been defeated!";
-            savePlayerData();
-        }
-
-        updateCombatUI(); // Refresh the UI
     }
 }
 
@@ -76,32 +49,31 @@ function updateCombatFeedback(playerMessage, enemyMessage) {
 // Player attack logic
 function attack() {
     if (currentEnemy.hp > 0 && gameState.hp > 0) {
-        const playerMessage = attackEnemy(currentEnemy); // Player attacks
-        console.log("Player's attack damage:", playerMessage); // Log player attack
+        const playerMessage = attackEnemy(currentEnemy);
+        console.log("Player's attack damage:", playerMessage);
 
-        // Enemy attacks if still alive
         const enemyMessage = currentEnemy.hp > 0 ? currentEnemy.attackPlayer(gameState) : "";
-
-        // Update combat feedback
+        
         updateCombatFeedback(playerMessage, enemyMessage);
 
-        // Update enemy HP in UI
         updateElementTextContent("enemyHP", currentEnemy.hp > 0 ? currentEnemy.hp : "Defeated");
 
-        // Check if enemy is defeated
         if (currentEnemy.hp <= 0) {
             alert(`You defeated the ${currentEnemy.name}!`);
-            gameState.gold += 10; // Reward Gold
-            grantXP(20); // Reward XP
+            gameState.gold += 10; 
+            grantXP(20);
             savePlayerData();
             updateCombatUI();
-            return; // End combat
+            handleEndGame(true); // Victory
+            return;
         }
 
-        // Update player HP in UI
-        updateElementTextContent("hp", gameState.hp);
+        if (gameState.hp <= 0) {
+            handleEndGame(false); // Game Over
+            return;
+        }
 
-        // Save state after updates
+        updateElementTextContent("hp", gameState.hp);
         savePlayerData();
     }
 }
@@ -112,94 +84,50 @@ function grantXP(amount) {
     console.log("XP gained:", amount, "Total XP:", gameState.xp);
 
     if (gameState.xp >= 100) {
-        gameState.xp -= 100; // Carry over excess XP
+        gameState.xp -= 100;
         gameState.level++;
         alert("You leveled up!");
 
-        // Apply level-up increments to the stats
         gameState.stats.attack += Math.floor(levelUpIncrements.attack);
         gameState.stats.defense += Math.floor(levelUpIncrements.defense);
         gameState.stats.speed += Math.floor(levelUpIncrements.speed);
 
-        console.log("Level-up applied:", gameState.stats); // Log stats after leveling up
+        console.log("Level-up applied:", gameState.stats);
 
         savePlayerData();
         updateCombatUI();
     } else {
-        savePlayerData();
-    }
-}
-
-function startBossBattle() {
-    console.log("Boss battle with Bandit King started!");
-    currentEnemy = {...BanditKing };
-    console.log("Current enemy set to Bandit King:", currentEnemy);
-    updateCombatUI;
-    updateElementTextContent("enemyHP", currentEnemy.hp);
-}
-
-function checkGameOver() {
-    if (gameState.hp <= 0) {
-        alert("You have been defeated!");
-        window.location.href = "../gameOver.html"; // Redirect to game over page
-    }
-}
-
-// Update the `enemyAttack` function to include the game over check
-function enemyAttack() {
-    const enemyAttackFeedback = document.getElementById("enemyAttackFeedback");
-
-    if (currentEnemy.hp > 0) {
-        const enemyMessage = currentEnemy.attackPlayer(gameState);
-        enemyAttackFeedback.textContent = enemyMessage;
-
-        console.log("Enemy's attack damage:", enemyMessage);
-
-        // Check if the player is defeated
-        checkGameOver();
-
-        updateCombatUI(); // Refresh the UI
-    }
-}
-
-// Update `attack` function to include a game over check
-function attack() {
-    if (currentEnemy.hp > 0 && gameState.hp > 0) {
-        const playerMessage = attackEnemy(currentEnemy);
-        console.log("Player's attack damage:", playerMessage);
-
-        // Enemy counter-attacks if still alive
-        const enemyMessage = currentEnemy.hp > 0 ? currentEnemy.attackPlayer(gameState) : "";
-
-        // Update combat feedback
-        updateCombatFeedback(playerMessage, enemyMessage);
-
-        // Update the UI
-        updateCombatUI();
-
-        // Check if the player is defeated
-        checkGameOver();
-
         savePlayerData();
     }
 }
 
 // Add event listeners for combat actions
-document.getElementById("attackBtn").addEventListener("click", attack);
+document.addEventListener("DOMContentLoaded", () => {
+    const attackBtn = document.getElementById("attackBtn");
+    const useItemBtn = document.getElementById("useItemBtn");
 
-document.getElementById("useItemBtn").addEventListener("click", () => {
-    if (gameState.inventory.potions > 0) {
-        gameState.hp += 10;
-        gameState.inventory.potions--;
-        alert("You used a potion and healed 10 HP!");
-        updateCombatUI();
-        savePlayerData();
+    if (attackBtn) {
+        attackBtn.addEventListener("click", attack);
     } else {
-        alert("You have no potions!");
+        console.error("Attack button not found in the DOM");
     }
-});
 
-// Load increments and update the UI at the start
-loadLevelUpIncrements();
-updateCombatUI();
-window.startBossBattle = startBossBattle;
+    if (useItemBtn) {
+        useItemBtn.addEventListener("click", () => {
+            if (gameState.inventory.potions > 0) {
+                gameState.hp = Math.min(100, gameState.hp + 10);
+                gameState.inventory.potions--;
+                alert("You used a potion and healed 10 HP!");
+                updateCombatUI();
+                savePlayerData();
+            } else {
+                alert("You have no potions!");
+            }
+        });
+    } else {
+        console.error("Use Item button not found in the DOM");
+    }
+
+    loadLevelUpIncrements();
+    updateCombatUI();
+});

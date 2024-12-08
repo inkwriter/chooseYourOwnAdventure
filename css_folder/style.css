@@ -13,25 +13,20 @@ p {
     margin: 1px;
 }
 
-.intro-animated-gif {
-    background-color: yellow;
-    height: 300px;
-    width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
 body {
     background-color:  #1B263B;
     color: #00B4D8;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     min-height: 100vhpx;
+}
+
+h1, h2 {
+    font-family: 'Alegreya', serif;
 }
 
 main {
@@ -45,7 +40,7 @@ button {
     background-color: #3D5A80;
     color: #FFFFFF;
     border: 1px solid #00B4D8;
-    height: 80px;
+    height: 60px;
     width: 80px;
     border-radius: 5px;
     padding: 10px 20px;
@@ -168,12 +163,70 @@ a button {
 
 #animated-gif {
     width: 80%;
-    height: 500px;
+    height: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
     background-color: yellow;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#camp {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: yellow;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#shop {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: yellow;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#banditEnemy {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: yellow;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#banditKingPic {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#village {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
     border: 2px solid black;
     border-radius: 10px;
 }
@@ -281,4 +334,153 @@ stats-list p {
 .choice-buttons button:hover {
     background-color: #FF6700;
     color: #FFFFFF;
+}
+
+.journey-button {
+    float: center;
+}
+
+.combat-container {
+    text-align: center;
+    position: relative;
+}
+
+#dialogueBox {
+    position: absolute;
+    top: 50%; /* or adjust as needed */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.dialogue-box.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#backToTheWild {
+    height: 90px;
+}
+
+#combat-feedback-box {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: black;
+    max-width: 300px;
+    text-align: left;
+}
+
+#comabt-feedback-box div {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+#playerAttackFeedback, #enemyAttackFeedback {
+    display: block;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 3px;
+    text-align: center;
+}
+
+
+/* For tablets and medium-sized devices (768px and up) */
+@media only screen and (min-width: 768px) {
+    #camp, #shop, #banditEnemy, #banditKingPic, #village {
+        height: 300px; /* Increase image size */
+    }
+    
+    body {
+        padding: 40px;
+        font-size: 16px;
+    }
+
+    .game-screen {
+        max-width: 700px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    button {
+        height: 60px;
+        width: 100px;
+        font-size: 14px;
+    }
+
+    .stats {
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+
+    .stats-btn, .inventory-button {
+        height: 30px;
+        width: 70px;
+    }
+
+    #animated-gif, #camp, #shop, #banditEnemy, #banditKingPic, #village {
+        height: 300px;
+    }
+}
+
+/* For desktops and large screens (1024px and up) */
+@media only screen and (min-width: 1024px) {
+    #camp, #shop, #banditEnemy, #banditKingPic, #village {
+        height: 400px; /* Larger images for desktops */
+    }
+    
+    body {
+        padding: 60px;
+        font-size: 14px;
+    }
+
+    .game-screen {
+        max-width: 900px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }  
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    button {
+        height: 50px;
+        width: 100px;
+        font-size: 14px;
+    }
+
+    .stats {
+        justify-content: space-between;
+    }
+
+    .stats-btn, .inventory-button {
+        height: 40px;
+        width: 80px;
+        font: 20px;
+    }
+
+    #backToTheWild {
+        height: 70px;
+    }
+
+    #animated-gif, #camp, #shop, #banditEnemy, #banditKingPic, #village {
+        height: 300px;
+    }
 }

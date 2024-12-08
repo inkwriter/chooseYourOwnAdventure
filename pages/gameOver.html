@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Over</title>
+    <title>Game End</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css_folder/style.css">
   </head>
   <body>
-    <div class="game-over-screen">
-      <h1>Game Over</h1>
-      <p>You have been defeated. Better luck next time!</p>
-      <a href="../index.html">
-        <button>Restart</button>
-      </a>
-    </div>
+    <main id="end-page">
+      <h1 id="endTitle"></h1>
+      <div id="endMessage"></div>
+      <button id="replayButton">Play Again</button>
+    </main>
+    <script type="module" src="../js_folder/endPage.js"></script>
   </body>
 </html>
