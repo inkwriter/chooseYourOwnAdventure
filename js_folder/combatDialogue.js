@@ -7,7 +7,8 @@ export function updateDialogue() {
     const dialogues = [
         "Bandit: 'You'll never take me down!'",
         "Bandit: 'I've faced tougher than you!'",
-        "Bandit: 'This is my turf!'"
+        "Bandit: 'This is my turf!'",
+        "Bandit: 'I'll never tell you where our camp is!'"
     ];
     // Randomly select a dialogue
     dialogueText.textContent = dialogues[Math.floor(Math.random() * dialogues.length)];

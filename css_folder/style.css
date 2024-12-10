@@ -536,6 +536,10 @@ stats-list p {
         height: 70px;
     }
 
+    #runAwayBtn, #attackBtn, #useItemBtn {
+        height: 70px;
+    }
+
     #banditKingDialogueBox {
         top: 60%;
     }

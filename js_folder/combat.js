@@ -91,6 +91,9 @@ function attack() {
             alert(`You defeated the ${currentEnemy.name}! + 10 Gold!`);
             gameState.gold += 10; // Reward gold
             grantXP(20); // Reward XP
+            
+            runAwayBtn.textContent = "RETURN TO CAMP";
+
             savePlayerData(); // Save updated game state
             updateCombatUI(); // Refresh UI
             return;
