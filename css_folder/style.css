@@ -364,6 +364,24 @@ stats-list p {
     pointer-events: none;
 }
 
+#shopDialogueBox {
+    position: absolute;
+    top: 50%; /* or adjust as needed */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.shopDialogue-box.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
 #backToTheWild {
     height: 90px;
 }

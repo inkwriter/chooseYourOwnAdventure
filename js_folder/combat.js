@@ -12,7 +12,6 @@ let levelUpIncrements = {
     speed: 0,
 };
 
-// Added
 function startCombat() {
     console.log("Combat started...");
     showDialogue(); // Show the dialogue
