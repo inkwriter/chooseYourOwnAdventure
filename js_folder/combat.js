@@ -89,7 +89,7 @@ function attack() {
             }
         } else {
             console.log(`You defeated the ${currentEnemy.name}!`);
-            alert(`You defeated the ${currentEnemy.name}!`);
+            alert(`You defeated the ${currentEnemy.name}! + 10 Gold!`);
             gameState.gold += 10; // Reward gold
             grantXP(20); // Reward XP
             savePlayerData(); // Save updated game state

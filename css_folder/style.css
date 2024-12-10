@@ -41,7 +41,7 @@ button {
     color: #FFFFFF;
     border: 1px solid #00B4D8;
     height: 60px;
-    width: 80px;
+    width: 90px;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
@@ -87,6 +87,7 @@ a button {
     height: 40px;
     width: 60;
     border-radius: 25%;
+    margin-top: 10px;
 }
 
 .game-screen {
@@ -392,6 +393,23 @@ stats-list p {
     text-align: center;
 }
 
+#poisonBtn {
+        background-color: #2E3B4E; /* Muted background for disabled buttons */
+        color: #AAAAAA; /* Muted text color */
+        border: 1px solid #555555; /* Subtle border for clarity */
+        cursor: not-allowed; /* Change cursor to indicate unclickable */
+        opacity: 0.7; /* Slightly fade the button for a disabled effect */
+        transition: none; /* Remove hover animation for disabled state */
+    
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 25px;
+    padding-right: 25px;
+}
 
 /* For tablets and medium-sized devices (768px and up) */
 @media only screen and (min-width: 768px) {
