@@ -411,6 +411,10 @@ stats-list p {
     padding-right: 25px;
 }
 
+#discovered {
+    margin-top: 25px;
+}
+
 /* For tablets and medium-sized devices (768px and up) */
 @media only screen and (min-width: 768px) {
     #camp, #shop, #banditEnemy, #banditKingPic, #village {
