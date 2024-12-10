@@ -366,7 +366,7 @@ stats-list p {
 
 #shopDialogueBox {
     position: absolute;
-    top: 50%; /* or adjust as needed */
+    top: 32%; 
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.8);
@@ -470,6 +470,10 @@ stats-list p {
     .stats-btn, .inventory-button {
         height: 30px;
         width: 70px;
+    }
+
+    #shopDialogueBox {
+        top: 40%;
     }
 
     #animated-gif, #camp, #shop, #banditEnemy, #banditKingPic, #village {
