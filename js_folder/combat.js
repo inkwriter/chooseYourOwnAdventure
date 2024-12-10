@@ -114,6 +114,7 @@ function grantXP(amount) {
         // Level up if XP threshold is reached
         gameState.xp -= 100; // Carry over excess XP
         gameState.level++; // Increment level
+        gameState.hp += 5; // Increase Health
         alert("You leveled up!");
 
         console.log("Applying level-up increments:", levelUpIncrements);
