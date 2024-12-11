@@ -8,14 +8,16 @@
 
 ## Features
 
-### Require Features Code:You
-1. Use arrays, objects, sets or maps to store and retrieve information that is displayed in your app.
+### Required Features
 
-2. Use a regular expression to validate user input and either prevent the invalid input or inform the user about it (in all cases prevent invalid input from being stored or saved).
+1. **Data Management with Arrays, Objects, Sets or Maps**:
+   - **Implementation**: We use JavaScript arrays to manage inventories, character stats, and dialogue options. Objects are used for character data, providing easy access to attributes like health, attack, and defense. Maps could be used for unique key-value pairs, like mapping items to their descriptions or effects.
 
-3. Retrieve data from a third-party API and use it to display something within your app.
+2. **User Input Validation with Regular Expressions**:
+   - **Implementation**: Player names are validated using a regular expression to ensure only valid characters are accepted. Invalid input is prevented from being saved, and users are informed via an alert if their input doesn't meet the criteria (e.g., only letters and spaces allowed, with a character limit).
 
----
+3. **Integration with a Third-Party API**:
+   - **Implementation**: The OpenWeather API is used to fetch real-time weather data based on the player's location. This data influences game mechanics, like altering combat conditions based on whether it's raining or snowing.
 
 ### Core Features
 1. **Dynamic Combat System**: Inspired by Dungeons & Dragons, the game uses dice rolls for attacks, enhancing the unpredictability of battles.
@@ -42,14 +44,13 @@
 
 To run this project, ensure:
 1. An OpenWeather API key.
-2. To Demo this project, please use Live Server or a local server to run the application.
+2. To demo this project, please use Live Server or a local server to run the application.
 
 ---
 
 ## Installation
 
 ### Steps to Run Locally:
-1. Clone the repository:
+1. **Clone the Repository**:
    ```bash
    git clone https://github.com/inkwriter/BanditsBane.git
-
