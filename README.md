@@ -46,6 +46,7 @@
 
 To run this project, ensure:
 1. An OpenWeather API key.
+   - At the top of weather.js there is this code "const apiKey = "YourKeyHere";". That is where you include your API key.
 2. To demo this project, please use **Live Server** in Visual Studio Code or another local server setup to run the application. Live Server provides a local development server with live reload functionality.
 
 ---
